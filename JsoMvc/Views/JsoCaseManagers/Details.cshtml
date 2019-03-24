@@ -1,0 +1,58 @@
+﻿@model JsoMvc.Models.JsoCaseManager
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>JsoCaseManager</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Crime.CrimeType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Crime.CrimeType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Officer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Officer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suspect.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suspect.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoursWorked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoursWorked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Completed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Completed)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CaseId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

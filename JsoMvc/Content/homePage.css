@@ -1,0 +1,36 @@
+﻿
+
+
+
+
+body {
+ 
+
+    background-image: url('img/hmbg.jpg');
+    margin: 0;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+    background-color: #222;
+    background-image: url('img/black-twill.png');
+}
+
+.jumbotron h1, .jumbotron .h1 {
+    color: yellow;
+}
+
+p {
+    margin: 0 0 10px;
+    color: white;
+}
+
+p.notWhitep {
+    margin: 0 0 10px;
+    color: black !important;
+}
+.jsobadge {
+    float: left;
+    padding: 20px;
+}

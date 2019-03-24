@@ -1,0 +1,66 @@
+﻿@model IEnumerable<JsoMvc.Models.JsoCaseManager>
+
+@{
+    ViewBag.Title = "Case Manager";
+}
+
+<h2>JSO Case Manager</h2>
+
+
+<p>
+    The Case Manager allows you to create, edit and delete cases based on the Database Objects you created in the Add Records Controllers.
+    The Index view you see here also allows you to click on the links in the table routing you to the appropriate 
+    Controller and View.
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Crime.CrimeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Officer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Suspect.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoursWorked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Completed)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td> 
+        @Html.ActionLink(item.Crime.CrimeType, "Details", "Crimes", new { id = item.CrimeId }, null)
+        </td>
+
+        <td>
+            @Html.ActionLink(item.Officer.Name, "Details", "Officers", new { id = item.OfficerId }, null)
+        </td>
+        <td>
+            @Html.ActionLink(item.Suspect.Name, "Details", "Suspects", new { id = item.SuspectId }, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoursWorked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Completed)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CaseId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CaseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CaseId })
+        </td>
+    </tr>
+}
+
+</table>

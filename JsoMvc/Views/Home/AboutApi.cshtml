@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "About Api";
+}
+
+<link href="@Url.Content("~/Content/homePage.css")" rel="stylesheet" type="text/css" />
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default text-left">
+            <div class="panel-body">
+                <p class="lead notWhitep">
+                    This is where you will see what a persistent no-sql api can do for you. It should be noted that
+                    we can perform CRUD operations with these but for our purposes here (and likely in the real world),
+                    I have only allowed get requests. In a real world scenario, there would be many more layers of
+                    abstraction here and if possible, I would rather it reside on something like "apiservice.jaxsheriff.org".
+                    From there we can lock it down even further than limiting Http requests such as initiating a token
+                    system and customizing the server itself. Below is an example use scenrio.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default text-left">
+            <div class="panel-body">
+                <p class="notWhitep">
+                    <img class="jsobadge" src="~/Content/img/curry.jpg" height="250" width="250" />
+                    <h3>Request</h3>
+                    Unfunded Mandate Time!! Hey the Florida Realtors Association and the North Florida Builders Association
+                    are requesting real-time data on crime statistics for their respective websites. The Mayor thinks
+                    it is a good idea because we are doing such a good job. Also, FDLE does not want to be left out. They 
+                    want on demand data for their reporting back to the FBI and DOJ.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default text-left">
+            <div class="panel-body">
+                <p class="notWhitep">
+                    <img class="jsobadge" src="~/Content/img/sqlguy.jpg" height="250" width="250" />
+                    <h3>Response</h3>
+                    Hey SQL Guy, I know you love writing stored procedures! No, not really. Nobody wants
+                    some organization crawling their sql server and the hassle of securing a connection for 
+                    some type of request/stored procedure method is not much fun either. Not to mention, these types of
+                    requests are getting more common now. Can we consolidate somehow? 
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default text-left">
+            <div class="panel-body">
+                <p class="notWhitep">
+                    <img class="jsobadge" src="~/Content/img/apiimg.png" height="250" />
+                    <h3>Yes...for the most part.</h3>
+                    What we can do is serve up data through our api. Our api takes ONLY Http get requests and
+                    serves the appropriate data (based on query string) back in XML or JSON. There is no SQL Query
+                    from the user end. Our data is available and persistent. It is only limited by the restrictions that
+                    we put on it. The SQL Server guy can rest easy knowing we have a read only dataset that lives
+                    outside of his server. The user cannot make requests to it. This also consolidates request parties.
+                    In our example, the Realtors AND the FBI could simply use the same URL request (or customized via query string)
+                    to get their data. No extra work for us! Simply here is the data, you parse and get what you are looking for.
+                    We ourselves can also use the service to feed data into our own apps if we choose. I have pre-constructed
+                    a few URLs below. This is a simple example without much abstraction but you will see the data you entered
+                    into the system represented here in JSON, ready to be parsed and re-used. Of course there is never a one
+                    size fits all fix, but this is certainly a nice tool to have in the box.                  
+                </p>
+                <br>
+                <div>
+                    <center><h4>@Html.ActionLink("Officer Data", "OfficersApi", "api") </h4></center>
+                    <center><h4>@Html.ActionLink("Case Manager Data", "JsoCaseManagersApi", "api") </h4></center>
+                    <center><h4>@Html.ActionLink("Suspects Data", "SuspectsApi", "api") </h4></center>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+
+

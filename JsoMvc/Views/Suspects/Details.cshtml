@@ -1,0 +1,66 @@
+﻿@model JsoMvc.Models.Suspect
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Suspect</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Race)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Race)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentifyingMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentifyingMarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuspectDOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuspectDOB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SuspectId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

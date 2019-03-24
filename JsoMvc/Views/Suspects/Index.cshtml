@@ -1,0 +1,70 @@
+﻿@model IEnumerable<JsoMvc.Models.Suspect>
+
+@{
+    ViewBag.Title = "Suspects";
+}
+
+<h2>Suspects</h2>
+
+<p>
+    In this controller, you can add Suspects to the Database. You can also edit and delete existing
+    Suspects. Ideally, this section would interface with the Jail System and maybe save us some work and grab
+    booking photos based on a key like Social Security Number. It could be really cool if the FBI has a national 
+    api system for us to hook into and retrieve data.
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Race)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdentifyingMarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuspectDOB)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Race)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdentifyingMarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuspectDOB)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.SuspectId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.SuspectId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.SuspectId })
+        </td>
+    </tr>
+}
+
+</table>

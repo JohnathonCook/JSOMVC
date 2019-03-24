@@ -1,0 +1,44 @@
+﻿@model IEnumerable<JsoMvc.Models.Crime>
+
+@{
+    ViewBag.Title = "Crime";
+}
+
+<h2>Crime Types</h2>
+<p>
+    In this controller, you can add Crime Types and Definitions to the Database. You can also edit and delete existing 
+    Crime Definitions. Ideally, I would find an api from either FDLE or the DOJ to handle definitions for us here. That
+    would keep our legal language current for our Officers.
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CrimeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CrimeDetails)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CrimeType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CrimeDetails)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CrimeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CrimeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CrimeId })
+        </td>
+    </tr>
+}
+
+</table>

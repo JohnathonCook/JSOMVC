@@ -1,0 +1,52 @@
+﻿@model IEnumerable<JsoMvc.Models.Officer>
+
+@{
+    ViewBag.Title = "Jso Officers";
+}
+
+<h2>Jso Officers</h2>
+
+<p>
+    In this controller, you can add Police Officers to the Database. You can also edit and delete existing
+    Officers. Ideally, I would have profile pictures here and since this is an internal app maybe we would use MS Graph
+    if there is anything to grab form Office 365. That would enable us to not have any extra work keeping the photos 
+    current or adding them for new hires.
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOH)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOH)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OfficerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OfficerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OfficerId })
+        </td>
+    </tr>
+}
+
+</table>
